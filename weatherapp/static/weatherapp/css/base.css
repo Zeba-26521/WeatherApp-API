@@ -1,0 +1,45 @@
+.navst{
+    background-color: rgb(33,40,50);
+    color: white;
+    text-align: center;
+}
+    
+
+body{
+        background-color:rgb(58,66,69);
+}
+.container{
+    background-color:rgb(254,101,98);
+}
+   
+.co{
+ width: 480px;
+height: 278px;
+}
+.myclass{     
+
+    width: 480px;
+    height: 278px;
+    background-color:rgb(254,101,98);
+}
+
+
+.myclass video{
+   
+   width: 485px;
+   height: 278px;
+   position: absolute;
+   object-fit: cover;
+    z-index: 0;
+    padding: 0 0;
+    margin: 0;
+        
+}
+
+.myclass .bb{
+    
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+}

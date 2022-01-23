@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="{% static 'weatherapp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'weatherapp/css/base.css' %}">
+</head>
+
+<body>
+      
+        <nav class="navbar navst text-center">
+            <div class="container-fluid text-center">
+              <span class="navbar-brand">Welcome to WeatherApp!!</span>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col co">
+        
+                    <div class="columns mt-4">
+                            <form method="POST">
+
+                                {% csrf_token %}
+                                {{form.as_p}}                        
+                                <input type="submit" class="btn btn-info btn-sm" value="Submit ">      
+            
+                            </form>
+                            <div class="box">
+                                <article class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-50x50">
+                                            <img src="http://openweathermap.org/img/w/{{city_weather.icon}}.png" alt="Image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                <span class="title">City:{{city_weather.City}}</span>
+                                                <br>
+                                                <span class="subtitle">Temp:{{city_weather.temp}}°C</span>
+                                                <br>Description:{{city_weather.description}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                    </div>
+
+                    
+                    
+              </div>
+
+              <div class="col myclass">
+    
+                <video autoplay loop class="videoback" muted plays-inline>
+                    <source src="{% static 'weatherapp/css/vv.mp4' %}" type=video/mp4>
+                </video>
+                <div class="bb">
+                    <h4>Weather!!</h4>
+                </div>
+
+                        <div class="box bb">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-50x50">
+                                        <img src="http://openweathermap.org/img/w/{{city_weather.icon}}.png" alt="Image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p> <span class="title">Tem Min::{{city_weather.temp_min}}°C</span>
+                                            <br>
+                                            <span class="title">Tem Max::{{city_weather.temp_max}}°C</span>
+                                            <br>
+                                            <span class="subtitle">Feel-like::{{city_weather.feels_like}}°C</span>
+                                            <br>
+                                            <span class="title"> Humidity:: {{city_weather.humidity}}%</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                   
+              </div>
+            
+            
+            </div>
+            
+          </div>
+          <footer class="footer">
+        </footer>
+        
+    </body>
+    
+</html>
